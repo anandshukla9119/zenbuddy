@@ -1,0 +1,230 @@
+/* 🌟 Full Screen Container */
+.about-container {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle, #1a1a2e, #16213e);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* 📝 About Section */
+.about-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #0ef; /* Neon Cyan */
+}
+
+.about-description {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #d4d4ff; /* Light Neon Purple */
+  padding-left: clamp(15px, 5vw, 35px);
+  padding-right: clamp(15px, 5vw, 35px);
+  max-width: 1200px;
+}
+
+.about-description strong {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff;
+}
+
+/* 🤔 Why ZenBuddy Section */
+.why-title {
+  font-size: 2.2rem;
+  margin-top: 40px;
+  color: #f11717;
+  text-shadow: 0 0 10px rgb(237, 237, 235), 0 0 20px rgb(239, 239, 234);
+}
+
+/* 🏆 Team Section */
+.team-title {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: bold;
+  margin-top: 30px;
+  color: #ff9800; /* Neon Orange */
+}
+
+/* 📌 Team Cards - Horizontal Scroll */
+.team-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap; /* Prevents wrapping */
+  gap: 15px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+/* 🎨 Neon Themed Cards - Increased Size */
+.team-card {
+  background: linear-gradient(135deg, #0ef, #ff1b6b);
+  border-radius: 15px;
+  padding: 20px; /* Increased padding for more space */
+  width: 300px; /* Increased width for better readability */
+  height: 400px; /* Increased height to prevent text overlap */
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 0px 15px rgba(0, 238, 255, 0.8);
+}
+
+.team-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 25px rgba(255, 27, 107, 1);
+}
+
+/* 👤 Team Member Details */
+.team-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.role {
+  font-weight: bold;
+  color: #ffeb3b;
+  font-size: 1.1rem;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #d4d4ff;
+}
+
+/* 📷 Team Member Photos */
+.team-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #ff1b6b;
+}
+
+/* 🔗 Social Icons - Adjusted Position */
+.social-links {
+  position: absolute;
+  bottom: 20px; /* Moved slightly up */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+}
+
+/* 🎭 Social Icons Styling */
+.social-icon {
+  font-size: 1.8rem; /* Increased size for better visibility */
+  color: #ffeb3b;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+/* 📞 Contact Us Section */
+.contact-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 40px;
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ffcc;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* 🔥 Neon Social Icons in Contact */
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0ff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-link:hover {
+  color: #ff0;
+  text-shadow: 0 0 10px #ff0, 0 0 20px #ff0, 0 0 30px #ff0;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 15px;
+  }
+
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .team-card {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    min-height: 380px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .contact-link {
+    font-size: 1rem;
+  }
+
+  .why-title {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 10px;
+  }
+
+  .team-card {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .team-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .role {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .social-icon {
+    font-size: 1.5rem;
+  }
+}

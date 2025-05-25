@@ -1,0 +1,210 @@
+/* 🔹 General Page Styling */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url(/public/background\ image.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* 🔹 Main Quiz Container */
+.quiz {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* 🔹 Quiz Box */
+.quiz-box {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px cyan;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  border: 2px solid cyan;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 30px;
+}
+
+/* 🔹 Quiz Title */
+.quiz-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: cyan;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+}
+
+/* 🔹 Question Section */
+.question-section {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 15px #ff00ff;
+  word-break: break-word;
+  width: 100%;
+  background: linear-gradient(135deg, #2c003e, #004d4d);
+}
+
+/* 🔹 Answer Buttons */
+.answer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.answer-section button {
+  width: 100%;
+  margin-top: 1rem;
+  max-width: 400px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0a0a0a;
+  background: #00c3ff;
+  border: 2px solid #00c3ff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 10px #00c3ff;
+}
+
+.answer-section button:hover {
+  background: #ff1493;
+  color: white;
+  box-shadow: 0 0 20px #ff1493;
+}
+
+/* 🔹 Reattempt Button */
+.reattempt-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff;
+  transition: 0.3s ease-in-out;
+}
+
+.reattempt-btn:hover {
+  background: linear-gradient(135deg, #00ffff, #ff00ff);
+  box-shadow: 0 0 25px #00ffff, 0 0 35px #ff00ff;
+}
+
+/* 🔹 Result Card */
+.result-card {
+  background: #0a0a0a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #ff00ff;
+  max-width: 600px;
+  width: 90%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  border: 2px solid #ff00ff;
+  text-align: center;
+}
+
+/* 🔹 Quiz History Title */
+.quiz-history-title {
+  font-size: 26px;
+  color: cyan;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px cyan;
+}
+
+/* 🔹 Quiz History Section */
+.quiz-history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 50px;
+}
+
+/* 🔹 History Card (Past Results) */
+.history-card {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 2px solid #00ffcc;
+  box-shadow: 0 0 15px #00ffcc;
+  text-align: left;
+}
+
+.history-score {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00ffc8;
+  margin-bottom: 8px;
+}
+
+.history-message {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.history-timestamp {
+  font-size: 14px;
+  color: #b0b0b0;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 600px) {
+  .quiz {
+    padding: 10px;
+  }
+
+  .quiz-box {
+    padding: 20px;
+  }
+
+  .question-section {
+    font-size: 1rem;
+  }
+
+  .answer-section button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .reattempt-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .result-card {
+    padding: 20px;
+  }
+}

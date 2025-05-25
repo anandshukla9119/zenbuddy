@@ -1,0 +1,289 @@
+
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.glass-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: fadeInDown 0.7s ease-in-out;
+}
+
+/* Brand Name */
+.brand {
+  font-size: 28px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #7f5af0, #00d9ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.brand:hover {
+  transform: scale(1.1);
+}
+
+/* Nav Buttons */
+.nav-links, .auth-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Buttons Common Style */
+.nav-links button,
+.auth-links button,
+.back-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7f5af0, #00d9ff);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 217, 255, 0.3);
+}
+
+.nav-links button:hover,
+.auth-links button:hover,
+.back-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(127, 90, 240, 0.6);
+}
+
+/* Logout Special */
+.logout-btn {
+  background: linear-gradient(135deg, #f43f5e, #f97316);
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.4);
+}
+
+.logout-btn:hover {
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.6);
+}
+
+/* Sign Up Special */
+.auth-links .signup {
+  background: linear-gradient(135deg, #22c55e, #3b82f6);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+}
+
+.auth-links .signup:hover {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+}
+
+/* Email Display */
+.user {
+  color: #e2e8f0;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+/* Back Button */
+.back-btn {
+  margin-left: 16px;
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .glass-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .nav-links,
+  .auth-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .brand {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Animation */
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add these new rules to your existing CSS */
+.right-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hamburger {
+  background: linear-gradient(135deg, #7f5af0, #00d9ff);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(0, 217, 255, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.hamburger.open {
+  background: linear-gradient(135deg, #f43f5e, #f97316);
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.6);
+}
+
+.hamburger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(127, 90, 240, 0.6);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(127, 90, 240, 0.5);
+  padding: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  transition: top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.mobile-menu.visible {
+  top: 0;
+}
+
+.mobile-menu .nav-links,
+.mobile-menu .auth-links {
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-top: 30px;
+}
+
+.mobile-menu button {
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  padding: 12px;
+  font-size: 16px;
+  background: rgba(127, 90, 240, 0.2);
+  border: 1px solid rgba(127, 90, 240, 0.5);
+  box-shadow: 0 0 15px rgba(127, 90, 240, 0.4);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu button:hover {
+  background: rgba(127, 90, 240, 0.4);
+  box-shadow: 0 0 25px rgba(127, 90, 240, 0.8);
+  transform: translateY(-2px);
+}
+
+.mobile-menu .logout-btn {
+  background: rgba(244, 63, 94, 0.2);
+  border: 1px solid rgba(244, 63, 94, 0.5);
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+}
+
+.mobile-menu .logout-btn:hover {
+  background: rgba(244, 63, 94, 0.4);
+  box-shadow: 0 0 25px rgba(244, 63, 94, 0.8);
+}
+
+.mobile-menu .signup {
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.5);
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+}
+
+.mobile-menu .signup:hover {
+  background: rgba(34, 197, 94, 0.4);
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.8);
+}
+
+.mobile-menu .user {
+  color: #e2e8f0;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+/* Update the existing media query */
+@media (max-width: 768px) {
+  .glass-navbar {
+    flex-direction: row;
+    align-items: center;
+    padding: 14px 32px;
+  }
+
+  .nav-content:not(.mobile-menu) {
+    display: none;
+  }
+
+  .brand {
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+
+  .right-container {
+    margin-left: auto;
+  }
+}
+
+.glass-navbar.menu-open {
+  box-shadow: 0 0 30px rgba(127, 90, 240, 0.5);
+}

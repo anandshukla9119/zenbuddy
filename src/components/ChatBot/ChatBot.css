@@ -1,0 +1,138 @@
+/* 🔥 Neon Heading */
+.chat-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #00f2fe;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00f2fe, 0 0 20px #00f2fe, 0 0 30px #00f2fe;
+  animation: neonGlow 2s infinite alternate;
+}
+
+/* Smooth neon glow animation */
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 5px #00f2fe, 0 0 10px #00f2fe;
+  }
+  to {
+    text-shadow: 0 0 20px #00f2fe, 0 0 40px #00f2fe, 0 0 60px #00f2fe;
+  }
+}
+
+/* Overall Chat Container */
+.chat-container {
+  width: 100vw;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  transition: all 0.4s ease;
+}
+
+/* Chat Main Box */
+.chat-box {
+  width: 100%;
+  max-width: 480px;
+  height: 80%;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.6s ease;
+  position: relative;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px rgba(255, 65, 108, 0.6);
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+}
+
+/* Open Chat Button */
+.open-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  border: none;
+  padding: 15px 22px;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 4px 14px rgba(0, 242, 254, 0.6);
+}
+
+.open-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Chat Messages */
+.cs-message__content {
+  padding: 14px 20px;
+  border-radius: 18px;
+  font-size: 15px;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+}
+
+/* User's Message */
+.cs-message--outgoing .cs-message__content {
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  color: white;
+  box-shadow: 0 2px 6px rgba(255, 175, 189, 0.5);
+}
+
+/* Bot's Message */
+.cs-message--incoming .cs-message__content {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  color: white;
+  box-shadow: 0 2px 6px rgba(102, 166, 255, 0.5);
+}
+
+/* Input Area */
+.cs-message-input {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 14px;
+  width: 90%;
+  margin: 10px auto;
+  backdrop-filter: blur(6px);
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.cs-message-input:focus {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Smooth fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}

@@ -1,0 +1,183 @@
+/* Base Reset */
+:root {
+  --card-height: 600px; /* Change this value to increase/decrease card height */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styling */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d0d0d;
+  color: #f1f1f1;
+}
+
+/* Container */
+.container {
+  max-width: 95vw;
+  margin: auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 3rem;
+  color: #0ff; /* Neon Cyan */
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  flex: 1;
+}
+
+/* Ensure max 3 columns on larger screens */
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card */
+.card {
+  background-color: #1a1a1a;
+  height: var(--card-height);
+  /* max-width: 400px; */
+  border: 1px solid #00ffc3;
+  border-radius: 16px;
+  box-shadow: 0 0 15px #00ffc3a0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #00ffc3;
+}
+
+/* Card Image */
+.card-img {
+  height: 350px;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card Content */
+.card-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 0 0 5px #00ffc3;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #ccc;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Play Button */
+.play-btn {
+  background-color: #00ffc3;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffc3;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.play-btn:hover {
+  background-color: #00ffaa;
+  transform: scale(1.05);
+}
+
+/* Time Display */
+.time-display {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #080808;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #00ffc3;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
+  }
+}

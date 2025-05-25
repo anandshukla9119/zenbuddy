@@ -1,0 +1,181 @@
+#root {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 1em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+#bot{
+  margin-top: -40%;
+  backdrop-filter: blur(8px);
+}
+
+/* 🔹 ChatBot Container */
+.chat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 63vh;
+  width: 100%;
+  /* background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb); */
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* 🔹 Hide Chatbot when Closed */
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* 🔹 Chat Box */
+.chat-box {
+  width: 380px;
+  /* height: 1px; */
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  
+  /* 🌟 Neon Gradient Background */
+  background: linear-gradient(135deg, #000428, #004e92);
+  
+  /* ✨ Neon Border & Glow */
+  border: 2px solid rgba(0, 238, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 238, 255, 0.7), 
+              0 0 30px rgba(0, 238, 255, 0.5);
+  
+  /* 🌀 Animated Glow */
+  animation: neon-border-glow 1.5s infinite alternate;
+}
+
+/* ✨ Smooth Neon Glow Animation */
+@keyframes neon-border-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 238, 255, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+  }
+}
+
+/* 🌟 Floating Effect for a Cool Look */
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.chat-box {
+  animation: floating 3s infinite ease-in-out;
+}
+
+
+/* 🔹 Close Button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  background: darkred;
+}
+
+/* 🔹 Open Chat Button */
+.open-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.open-btn:hover {
+  background: #388E3C;
+}
+
+/* 🔹 Customize Chat Bubbles */
+.cs-message__content {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 18px;
+  border-radius: 18px;
+}
+
+/* 🔹 User Messages */
+.cs-message--outgoing .cs-message__content {
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  color: white;
+}
+
+/* 🔹 Bot Messages */
+.cs-message--incoming .cs-message__content {
+  background: linear-gradient(to right, #A1C4FD, #C2E9FB);
+  color: #333;
+  border: 1px solid #ff9a9e;
+}
+
+/* 🔹 Message Input Styling */
+.cs-message-input {
+  background: white;
+  border-top: 1px solid #ddd;
+}

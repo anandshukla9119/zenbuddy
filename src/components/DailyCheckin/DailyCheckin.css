@@ -1,0 +1,370 @@
+/* Modern Variables */
+:root {
+  --primary-color: #2E7D32;
+  --primary-light: #4CAF50;
+  --primary-dark: #1B5E20;
+  --accent-color: #FFC107;
+  --success-color: #4CAF50;
+  --text-primary: #212121;
+  --text-secondary: #e9e0e0;
+  --bg-light: #212020;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.15);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* Overlay */
+.daily-checkin-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+/* Modal */
+.daily-checkin-modal {
+  background: var(--bg-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+/* Typography */
+ /* .daily-checkin-modal h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+} */
+
+.welcome-text {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Quote Container */
+.quote-container {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-container::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-size: 8rem;
+  opacity: 0.1;
+  color: white;
+}
+
+.quote {
+  font-size: 2.1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.author {
+  font-style: italic;
+  opacity: 0.9;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+/* 🔥 Streak Counter */
+.streak-counter {
+  background: var(--accent-color);
+  color: var(--text-primary);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  transition: var(--transition-fast);
+}
+
+.streak-counter:hover {
+  box-shadow: var(--shadow-md);
+  transform: scale(1.02);
+}
+
+/* Week Progress */
+.week-progress {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.day-status {
+  background: #f5f5f5;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  font-size: 0.8rem;
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.day-name {
+  display: block;
+  font-weight: 500;
+  color: black;
+}
+
+.day-status.today {
+  background: var(--primary-light);
+  color: white;
+}
+
+.day-status.today .day-name {
+  color: white;
+}
+
+.day-status.checked {
+  background: var(--success-color);
+  color: white;
+}
+
+.day-status.checked .day-name {
+  color: white;
+}
+
+.check-mark {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--accent-color);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Buttons */
+.checkin-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.checkin-button {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.checkin-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.skip-button {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.skip-button:hover {
+  color: var(--text-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .daily-checkin-modal {
+    padding: 1.5rem;
+  }
+
+  .week-progress {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.25rem;
+  }
+
+  .day-status {
+    padding: 0.25rem;
+  }
+
+  .streak-counter {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .week-progress {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Main container for daily check-in page */
+.daily-checkin-page {
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 90vw;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Heading styles */
+.daily-checkin-page h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Welcome text styling */
+.welcome-text {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+/* Quote container styling */
+.quote-container {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.quote-container::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-size: 10rem;
+  opacity: 0.15;
+  color: white;
+}
+
+.quote {
+  font-size: 2.5rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.author {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  text-align: right;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .daily-checkin-page {
+    padding: 1.5rem;
+  }
+
+  .daily-checkin-page h2 {
+    font-size: 2rem;
+  }
+
+  .quote-container {
+    padding: 1.5rem;
+  }
+
+  .quote {
+    font-size: 2rem;
+  }
+
+  .author {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .daily-checkin-page {
+    padding: 1rem;
+  }
+
+  .daily-checkin-page h2 {
+    font-size: 1.8rem;
+  }
+
+  .quote-container {
+    padding: 1rem;
+  }
+
+  .quote {
+    font-size: 1.8rem;
+  }
+
+  .author {
+    font-size: 0.9rem;
+  }
+}
